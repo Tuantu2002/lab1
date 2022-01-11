@@ -6,7 +6,9 @@ import Tuyendung from "./pages/tuyendung";
 import Tuyensinh from "./pages/tuyensinh";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import DetailPgage from "./pages/detail";
+import DetailPage from "./pages/detail";
+import Adminproducts from "./pages/admin/product";
+import AdminproductEdit from "./pages/admin/productedit";
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = (content) => {
@@ -32,8 +34,15 @@ router.on({
     print(Tuyendung.render());
   },
   "/tuyendung/:id": ({ data }) => {
-    const { id } = data.id;
-    print(DetailPgage.render(id));
+    const { id } = data;
+    print(DetailPage.render(+id));
+  },
+  "admin/tuyendung": () => {
+    print(Adminproducts.render());
+  },
+  "admin/tuyendung/:id/edit": ({ data }) => {
+    const { id } = data;
+    print(AdminproductEdit.render(+id));
   },
 });
 

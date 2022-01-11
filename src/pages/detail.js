@@ -1,9 +1,15 @@
-import data1 from "../data1";
 import data from "../data";
 
-const DetailPgage = {
+const DetailPage = {
   render(id) {
-    return `detailpage`;
+    const result = data.find((post) => post.id === id);
+    return /* html */ `
+            <div>
+                <h1>${result.title}</h1>
+                <img src="${result.img}" alt="" />
+                <p>${result.desc}</p>
+            </div>
+        `;
   },
 };
-export default DetailPgage;
+export default DetailPage;
