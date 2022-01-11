@@ -6,12 +6,13 @@ import Tuyendung from "./pages/tuyendung";
 import Tuyensinh from "./pages/tuyensinh";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import DetailPgage from "./pages/detail";
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = (content) => {
   document.querySelector("#header").innerHTML = Header.render();
   document.querySelector("#app").innerHTML = content;
-  // document.querySelector("#footer").innerHTML = Footer.render();
+  document.querySelector("#footer").innerHTML = Footer.render();
 };
 
 router.on({
@@ -29,6 +30,10 @@ router.on({
   },
   "/tuyendung": () => {
     print(Tuyendung.render());
+  },
+  "/tuyendung/:id": ({ data }) => {
+    const { id } = data.id;
+    print(DetailPgage.render(id));
   },
 });
 
