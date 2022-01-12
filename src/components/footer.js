@@ -1,7 +1,7 @@
 const Footer = {
   render() {
     return /*html */ ` 
-    <h2> Tuấn Tú</h2>
+    <h2 class="text-center"> Tuấn Tú</h2>
     `;
   },
 };

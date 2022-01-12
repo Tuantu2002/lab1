@@ -9,6 +9,8 @@ import Footer from "./components/footer";
 import DetailPage from "./pages/detail";
 import Adminproducts from "./pages/admin/product";
 import AdminproductEdit from "./pages/admin/productedit";
+import SignUP from "./pages/signup";
+import SignIn from "./pages/signin";
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = (content) => {
@@ -32,6 +34,13 @@ router.on({
   },
   "/tuyendung": () => {
     print(Tuyendung.render());
+  },
+
+  "/dangky": () => {
+    print(SignUP.render());
+  },
+  "/dangnhap": () => {
+    print(SignIn.render());
   },
   "/tuyendung/:id": ({ data }) => {
     const { id } = data;

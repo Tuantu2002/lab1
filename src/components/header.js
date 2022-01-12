@@ -1,6 +1,11 @@
 const Header = {
   render() {
     return /* html */ ` 
+    <div class="bg-violet-800 float-right  font-medium">
+    <a href="/dangnhap" class="text-white">Sign in/</a>
+    <a href="/dangky" class= "text-white">Sign up</a>
+    
+    </div>
     <div class="bg-violet-800 py-4">
         <a href="#">
           <img src="./images/LOGO-PTCĐ-White-Transparency.png" width="18%" alt="" class="mx-auto " />
