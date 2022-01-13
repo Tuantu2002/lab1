@@ -8,7 +8,7 @@ const Header = {
     </div>
     <div class="bg-violet-800 py-4">
         <a href="#">
-          <img src="./images/LOGO-PTCĐ-White-Transparency.png" width="18%" alt="" class="mx-auto " />
+          <img src="./src/images/LOGO-PTCĐ-White-Transparency.png" width="18%" alt="" class="mx-auto " />
         </a>
       </div>
       <nav class="bg-orange-600 px-3 flex ">
