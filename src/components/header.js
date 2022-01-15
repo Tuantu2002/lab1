@@ -1,6 +1,6 @@
 const Header = {
-render() {
-return /* html */ `
+  render() {
+    return /* html */ `
 <div class="bg-violet-800 float-right  font-medium">
   <a href="/dangnhap" class="text-white">Sign in/</a>
   <a href="/dangky" class="text-white">Sign up</a>
@@ -8,7 +8,7 @@ return /* html */ `
 </div>
 <div class="bg-violet-800 py-4">
   <a href="#">
-    <img src="../../src/images/logo1.jpg" width="18%" alt="" class="mx-auto " />
+    <img src="../../src/images/LOGO-PTCĐ-White-Transparency.png" width="18%" alt="" class="mx-auto " />
   </a>
 </div>
 <nav class="bg-orange-600 px-3 flex ">
@@ -49,6 +49,6 @@ return /* html */ `
       Kiếm</button>
   </div>
 </nav>`;
-},
+  },
 };
 export default Header;

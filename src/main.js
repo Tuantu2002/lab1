@@ -11,6 +11,7 @@ import Adminproducts from "./pages/admin/product";
 import AdminproductEdit from "./pages/admin/productedit";
 import SignUP from "./pages/signup";
 import SignIn from "./pages/signin";
+import DashBoard from "./pages/admin/dashboard";
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = (content) => {
@@ -52,6 +53,9 @@ router.on({
   "admin/tuyendung/:id/edit": ({ data }) => {
     const { id } = data;
     print(AdminproductEdit.render(+id));
+  },
+  "admin/dashboard": () => {
+    print(DashBoard.render());
   },
 });
 
