@@ -1,62 +1,31 @@
 import Navigo from "navigo";
-import Daotao from "./pages/daotao";
-import Gocsinhvien from "./pages/gocsinhvien";
-import Trangchu from "./pages/trangchu";
-import Tuyendung from "./pages/tuyendung";
-import Tuyensinh from "./pages/tuyensinh";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import AboutPage from "./pages/about";
+import Dashboard from "./pages/admin/dashboard";
+import AdminNewsPage from "./pages/admin/news";
+import AdminAddPost from "./pages/admin/news/add";
+import AdminEditPost from "./pages/admin/news/edit";
 import DetailPage from "./pages/detail";
-import Adminproducts from "./pages/admin/product";
-import AdminproductEdit from "./pages/admin/productedit";
-import SignUP from "./pages/signup";
-import SignIn from "./pages/signin";
-import DashBoard from "./pages/admin/dashboard";
-const router = new Navigo("/", { linksSelector: "a" });
+import HomePage from "./pages/home";
+import ProductPage from "./pages/product";
+import Signup from "./pages/signup";
 
-const print = (content) => {
-  document.querySelector("#header").innerHTML = Header.render();
-  document.querySelector("#app").innerHTML = content;
-  document.querySelector("#footer").innerHTML = Footer.render();
+const router = new Navigo("/", { linksSelector: "a", hash: true });
+
+const print = async (content, id) => {
+    document.querySelector("#app").innerHTML = await content.render(id);
+    if (content.afterRender) content.afterRender(id);
 };
 
 router.on({
-  "/": () => {
-    print(Trangchu.render());
-  },
-  "/tuyensinh": () => {
-    print(Tuyensinh.render());
-  },
-  "/daotao": () => {
-    print(Daotao.render());
-  },
-  "/gocsinhvien": () => {
-    print(Gocsinhvien.render());
-  },
-  "/tuyendung": () => {
-    print(Tuyendung.render());
-  },
-
-  "/dangky": () => {
-    print(SignUP.render());
-  },
-  "/dangnhap": () => {
-    print(SignIn.render());
-  },
-  "/tuyendung/:id": ({ data }) => {
-    const { id } = data;
-    print(DetailPage.render(+id));
-  },
-  "admin/tuyendung": () => {
-    print(Adminproducts.render());
-  },
-  "admin/tuyendung/:id/edit": ({ data }) => {
-    const { id } = data;
-    print(AdminproductEdit.render(+id));
-  },
-  "admin/dashboard": () => {
-    print(DashBoard.render());
-  },
+    "/": () => print(HomePage),
+    "/about": () => print(AboutPage),
+    "/product": () => print(ProductPage),
+    "/signup": () => print(Signup),
+    "/news/:id": ({ data }) => print(DetailPage, data.id),
+    "/admin/dashboard": () => print(Dashboard),
+    "/admin/news": () => print(AdminNewsPage),
+    "/admin/news/add": () => print(AdminAddPost),
+    "/admin/news/:id/edit": ({ data }) => print(AdminEditPost, data.id),
 });
 
 router.resolve();

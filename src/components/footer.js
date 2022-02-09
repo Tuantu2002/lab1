@@ -1,8 +1,6 @@
 const Footer = {
-  render() {
-    return /*html */ ` 
-    <h2 class="text-center"> Tuấn Tú</h2>
-    `;
-  },
+    render() {
+        return `<p>Copy right by Datlt</p>`;
+    },
 };
 export default Footer;
