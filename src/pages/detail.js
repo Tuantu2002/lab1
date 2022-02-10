@@ -1,16 +1,14 @@
-import { get } from "../api/post";
+import { get } from "../api/posts";
 
 const DetailPage = {
-    async render(id) {
-        const { data } = await get(id);
-        // const result = data.find((post) => post.id === id);
-        return /* html */`
-            <div>
-                <h1>${data.title}</h1>
-                <img src="${data.img}" alt="" />
-                <p>${data.desc}</p>
-            </div>
+  async render(id) {
+    const { data } = await get(id);
+    return `
+            <div>Detail Page</div>
+            <h1>${data.title}</h1>
+            <img src="${data.img}" />
+            <p>${data.desc}</p>
         `;
-    },
+  },
 };
 export default DetailPage;
