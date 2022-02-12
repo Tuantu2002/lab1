@@ -1,4 +1,6 @@
+import toastr from "toastr";
 import { signin } from "../api/user";
+import "toastr/build/toastr.min.css";
 
 const Signin = {
     render() {
@@ -70,12 +72,15 @@ const Signin = {
             });
             // lưu dữ liệu vào localStorage
             localStorage.setItem("user", JSON.stringify(data.user));
+            toastr.success("bạn đã đăng nhập thành công");
+            setTimeout(() => {
             // kiểm tra quyền dựa trên ID
-            if (data.user.id === 1) {
-                document.location.href = "/#/admin/dashboard";
-            } else {
-                document.location.href = "/#/";
-            }
+                if (data.user.id === 1) {
+                    document.location.href = "/#/admin/dashboard";
+                } else {
+                    document.location.href = "/#/";
+                }
+            }, 2000);
         });
     },
 };

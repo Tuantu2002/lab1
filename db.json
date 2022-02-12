@@ -166,43 +166,8 @@
       "img": "https://picsum.photos/200/200",
       "desc": "Mô tả cho bài viết vừa cập nhật",
       "id": "UFTT7KK"
-    },
-    {
-      "title": {},
-      "img": {},
-      "desc": {},
-      "id": "M_9uAyK"
-    },
-    {
-      "title": "tieu de",
-      "img": "anh",
-      "desc": "mo ta",
-      "id": "h6Q43Lk"
-    },
-    {
-      "title": "tieu de",
-      "img": "anh",
-      "desc": "mo ta",
-      "id": "SHqRna_"
-    },
-    {
-      "title": "Bai viet moi them ",
-      "img": "anh moi them",
-      "desc": "noi dung moi them",
-      "id": "hbLpc1q"
-    },
-    {
-      "title": "Bài viết mới 10",
-      "img": "",
-      "desc": "Mô tả bài viết mới 10",
-      "id": "aphEf0q"
-    },
-    {
-      "title": "new post",
-      "img": "https://res.cloudinary.com/ecommercer2021/image/upload/v1644206608/yvgjh1q1fxrtmxblxiik.jpg",
-      "desc": "mo ta bai viet",
-      "id": "IpcDiWw"
     }
+    
   ],
   "products": [],
   "users": [
